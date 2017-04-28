@@ -27,7 +27,7 @@ for (x in names) {
                     $class: 'GitSCM',
                     branches: [[name: '*/master']],
                     userRemoteConfigs: [[
-                        url: 'https://github.com/ess-dmsc/dm-jenkins-jobs'
+                        url: 'https://github.com/ess-dmsc/jenkins-self-test'
                     ]]
                 ])
             }
