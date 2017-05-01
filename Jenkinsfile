@@ -1,3 +1,8 @@
+// Set periodic trigger at 21:12 every day.
+properties([
+    pipelineTriggers([cron('12 21 * * *')]),
+])
+
 shell_script="""
 which clang-format
 which cmake
