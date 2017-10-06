@@ -27,6 +27,8 @@ for (x in names) {
     def name = x
     builders[name] = {
         node(name) {
+            cleanWs()
+            
             stage('Checkout') {
                 checkout([
                     $class: 'GitSCM',
