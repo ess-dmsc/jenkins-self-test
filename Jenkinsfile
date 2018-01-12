@@ -1,6 +1,6 @@
-// Set periodic trigger at 21:12 every day.
+// Trigger every two hours.
 properties([
-    pipelineTriggers([cron('12 21 * * *')]),
+    pipelineTriggers([cron('12 H/2 * * *')]),
 ])
 
 shell_script="""
@@ -28,7 +28,7 @@ for (x in names) {
     builders[name] = {
         node(name) {
             cleanWs()
-            
+
             stage('Checkout') {
                 checkout([
                     $class: 'GitSCM',
