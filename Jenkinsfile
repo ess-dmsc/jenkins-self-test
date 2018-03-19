@@ -48,7 +48,7 @@ for (x in names) {
       }
       stage('Test') {
         sh(shell_script)
-        sh "python test_free_disk_space.py"
+        sh "python test_free_disk_space.py --min 50.0"  // Force failure
       }
     }
   }
