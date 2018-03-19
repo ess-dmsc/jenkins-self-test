@@ -28,8 +28,8 @@ def failure_function(exception_obj, failureMessage) {
     variable: 'NOTIFICATION_EMAIL'
   )]) {
     emailext body: '${DEFAULT_CONTENT}\n\"' + failureMessage + '\"\n\nCheck console output at $BUILD_URL to view the results.',
-      to: "${NOTIFICATION_EMAIL}"
-      subject: '${DEFAULT_SUBJECT}'
+      to: "${NOTIFICATION_EMAIL}",
+      subject: "${DEFAULT_SUBJECT}"
   }
 
   throw exception_obj
