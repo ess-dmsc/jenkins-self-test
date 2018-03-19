@@ -28,5 +28,5 @@ if __name__ == '__main__':
     if used_space >= args.min:
         sys.exit(0)
     else:
-        print("Error: the value is below {:.1f} GiB".format(args.min))
+        print("Error: free disk space is below {:.1f} GiB".format(args.min))
         sys.exit(1)
