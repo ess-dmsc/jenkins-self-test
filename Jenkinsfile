@@ -19,8 +19,12 @@ def names = [
   'master',
   'dmbuild01.dm.esss.dk',
   'dmbuild02.dm.esss.dk',
-  'dmbuild03.dm.esss.dk',
-  'dmbuild05.dm.esss.dk'
+  'dmbuild05.dm.esss.dk',
+  'dmbuild06.dm.esss.dk',
+  'dmbuild07.dm.esss.dk',
+  'dmbuild08.dm.esss.dk',
+  'dmbuild09.dm.esss.dk',
+  'dmbuild10.dm.esss.dk'
 ]
 
 def failure_function(exception_obj, failureMessage) {
@@ -61,7 +65,9 @@ for (x in names) {
 }
 
 try {
-  parallel builders
+  timeout(time: 1, unit: 'HOURS') {
+    parallel builders
+  }
 } catch (e) {
   failure_function(e, 'Jenkins self-test failed')
 }
