@@ -24,7 +24,15 @@ def names = [
   'dmbuild07.dm.esss.dk',
   'dmbuild08.dm.esss.dk',
   'dmbuild09.dm.esss.dk',
-  'dmbuild10.dm.esss.dk'
+  'dmbuild10.dm.esss.dk',
+  'dmbuild11.dm.esss.dk',
+  'dmbuild20.dm.esss.dk',
+  'dmbuild21.dm.esss.dk',
+  'dmbuild22.dm.esss.dk',
+  'dmbuild23.dm.esss.dk',
+  'dmbuild24.dm.esss.dk',
+  'dmbuild25.dm.esss.dk',
+  'dmbuild26.dm.esss.dk'
 ]
 
 def failure_function(exception_obj, failureMessage) {
