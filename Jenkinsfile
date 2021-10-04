@@ -35,6 +35,11 @@ def names = [
   'dmbuild26.dm.esss.dk'
 ]
 
+docker_nodes = nodesByLabel('docker')
+systest_nodes = nodesByLabel('system-test')
+master_nodes = nodesByLabel('master')
+names = docker_nodes + systest_nodes + master_nodes
+
 def failure_function(exception_obj, failureMessage) {
   withCredentials([string(
     credentialsId: 'jenkins-notification-email',
