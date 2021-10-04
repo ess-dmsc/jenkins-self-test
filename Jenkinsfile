@@ -15,26 +15,6 @@ which python
 which valgrind
 """
 
-def names = [
-  'master',
-  'dmbuild01.dm.esss.dk',
-  'dmbuild02.dm.esss.dk',
-  'dmbuild05.dm.esss.dk',
-  'dmbuild06.ecdc.esss.dk',
-  'dmbuild07.dm.esss.dk',
-  'dmbuild08.ecdc.esss.dk',
-  'dmbuild09.dm.esss.dk',
-  'dmbuild10.ecdc.esss.dk',
-  'dmbuild11.dm.esss.dk',
-  'dmbuild20.dm.esss.dk',
-  'dmbuild21.dm.esss.dk',
-  'dmbuild22.dm.esss.dk',
-  'dmbuild23.dm.esss.dk',
-  'dmbuild24.dm.esss.dk',
-  'dmbuild25.dm.esss.dk',
-  'dmbuild26.dm.esss.dk'
-]
-
 docker_nodes = nodesByLabel('docker')
 systest_nodes = nodesByLabel('system-test')
 master_nodes = nodesByLabel('master')
