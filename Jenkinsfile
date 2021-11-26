@@ -5,14 +5,10 @@ properties([
 
 shell_script="""
 which clang-format
-which cmake
 which cppcheck
 which gcovr
 which git
-which g++
-which lcov
 which python
-which valgrind
 """
 
 docker_nodes = nodesByLabel('docker')
