@@ -17,6 +17,8 @@ def failure_function(exception_obj, failureMessage) {
        to: "${NOTIFICATION_EMAIL}",
        subject: '${DEFAULT_SUBJECT}'
    }
+
+  throw exception_obj
 }
 
 def builders = [:]
