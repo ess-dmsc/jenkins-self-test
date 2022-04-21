@@ -1,18 +1,10 @@
 // Trigger every two hours.
 properties([
-  pipelineTriggers([cron('12 H/2 * * *')]),
+  pipelineTriggers([cron('12 2 * * *')]),
 ])
 
-shell_script="""
-which clang-format
-which cppcheck
-which gcovr
-which git
-which python
-"""
-
 docker_nodes = nodesByLabel('docker')
-systest_nodes = nodesByLabel('system-test')
+systest_nodes = nodesByLabel('inttest')
 master_nodes = nodesByLabel('master')
 names = docker_nodes + systest_nodes + master_nodes
 
@@ -46,7 +38,6 @@ for (x in names) {
         ])
       }
       stage('Test') {
-        sh(shell_script)
         sh "python test_free_disk_space.py --min 10.0"
       }
     }
