@@ -9,13 +9,10 @@ master_nodes = nodesByLabel('master')
 names = docker_nodes + systest_nodes + master_nodes
 
 def failure_function(exception_obj, failureMessage) {
-  withCredentials([string(
-    credentialsId: 'jenkins-notification-email',
-    variable: 'NOTIFICATION_EMAIL'
-  )]) {
-    emailext body: '${DEFAULT_CONTENT}\n\"' + failureMessage + '\"\n\nCheck console output at $BUILD_URL to view the results.',
-      to: "${NOTIFICATION_EMAIL}",
-      subject: '${DEFAULT_SUBJECT}'
+  def toEmails: [[$class: 'DevelopersRecipientProvider']]
+  emailext body: '${DEFAULT_CONTENT}\n\"' + failureMessage + '\"\n\nCheck console output at $BUILD_URL to view the results.',
+    recipentProviders: toEmails,
+    subject: '${DEFAULT_SUBJECT}'
   }
 
   throw exception_obj
