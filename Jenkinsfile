@@ -13,7 +13,6 @@ def failure_function(exception_obj, failureMessage) {
   emailext body: '${DEFAULT_CONTENT}\n\"' + failureMessage + '\"\n\nCheck console output at $BUILD_URL to view the results.',
     recipentProviders: toEmails,
     subject: '${DEFAULT_SUBJECT}'
-  }
 
   throw exception_obj
 }
