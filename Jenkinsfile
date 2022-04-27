@@ -4,9 +4,9 @@ properties([
 ])
 
 docker_nodes = nodesByLabel('docker')
-systest_nodes = nodesByLabel('inttest')
+inttest_nodes = nodesByLabel('inttest')
 master_nodes = nodesByLabel('master')
-names = docker_nodes + systest_nodes + master_nodes
+names = docker_nodes + inttest_nodes + master_nodes
 
 def failure_function(exception_obj, failureMessage) {
    withCredentials([string(
